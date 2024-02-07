@@ -12,14 +12,14 @@ from bardapi import Bard
 from datetime import datetime
 import logging
 
-FORMAT = "[] %(message)s"
+FORMAT = "[BRANDED] %(message)s"
 logging.basicConfig(
     level=logging.WARNING, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
 
 StartTime = time.time()
- = Client(
+BRANDED = Client(
     "chat-gpt" ,
     api_id = API_ID,
     api_hash = API_HASH ,
@@ -70,8 +70,8 @@ MAIN = [
         InlineKeyboardButton(text="♥ ʜᴇʟᴘ & ᴄᴍᴅs ♥", callback_data="HELP"),
     ],
     [
-        InlineKeyboardButton(text="☆ ʜᴇʀᴏᴋᴜ ☆", url=f"https://t.me/musicalgerian"),
-        InlineKeyboardButton(text="☆ ᴏᴡɴᴇʀ ☆", url=f"https://t.me/Viscobt1"),
+        InlineKeyboardButton(text="☆ ʜᴇʀᴏᴋᴜ ☆", url=f"https://t.me/BRANDED_PAID_CC"),
+        InlineKeyboardButton(text="☆ ᴏᴡɴᴇʀ ☆", url=f"https://t.me/BRANDEDKING82"),
     ],
 ]
 X = [
@@ -95,11 +95,11 @@ PNG_BTN = [
          ),
      ],
 ]
-SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('ʀᴇᴘᴏ' , url=f"")]])
-HELP_READ = "**➻ ᴜsᴀɢᴇ** /chatgpt  <prompt>\n\n ʜᴇʟᴘ: `/chatgpt  Space then write your question.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nᴇxᴀᴍᴘʟᴇ: `/generate a book photo`  \n\n➻ ᴜsᴀɢᴇ /lyrics : ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ꜰɪʟᴇ ᴛᴏ ᴅᴇᴛᴇᴄᴛ ʟʏʀɪᴄꜱ**➻ ᴜsᴀɢᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️ ᴏᴡɴᴇʀ : [𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧 ](https://t.me/Viscobt1) **"
+SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('ʀᴇᴘᴏ' , url=f"https://telegra.ph")]])
+HELP_READ = "**➻ ᴜsᴀɢᴇ** /chatgpt <prompt>\n\n ʜᴇʟᴘ: `/chatgpt Space then write your question.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nᴇxᴀᴍᴘʟᴇ: `/generate a book photo`  \n\n➻ ᴜsᴀɢᴇ /lyrics : ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ꜰɪʟᴇ ᴛᴏ ᴅᴇᴛᴇᴄᴛ ʟʏʀɪᴄꜱ**➻ ᴜsᴀɢᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️ ᴏᴡɴᴇʀ : [𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧](https://t.me/BRANDEDKING82) **"
 HELP_BACK = [
      [
-                      InlineKeyboardButton(text="★ Qᴜᴇꜱᴛɪᴏɴ ᴛʜᴀᴛ ᴄʜᴀᴛɢᴘᴛ ᴄᴀɴ ꜱᴏʟᴠᴇ ★", url=f"https://t.me/vddffro"),
+           InlineKeyboardButton(text="★ Qᴜᴇꜱᴛɪᴏɴ ᴛʜᴀᴛ ᴄʜᴀᴛɢᴘᴛ ᴄᴀɴ ꜱᴏʟᴠᴇ ★", url=f"https://t.me/vddffro"),
            
      ],
     [
@@ -109,7 +109,7 @@ HELP_BACK = [
 
   
 #         start
-@.on_message(filters.command(["start",f"start@{BOT_USERNAME}"]))
+@BRANDED.on_message(filters.command(["start",f"start@{BOT_USERNAME}"]))
 async def start(client, m: Message):
     try:
         accha = await m.reply_text(
@@ -131,7 +131,7 @@ async def start(client, m: Message):
     except Exception as y:
         await m.reply(y)
 #  callback 
-@.on_callback_query()
+@BRANDED.on_callback_query()
 async def cb_handler(Client, query: CallbackQuery):
     if query.data == "HELP":
      await query.message.edit_text(
@@ -143,18 +143,18 @@ async def cb_handler(Client, query: CallbackQuery):
                   reply_markup=InlineKeyboardMarkup(MAIN),
         )
     
-@.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
+@BRANDED.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
     hmm = await message.reply_photo(START_IMG,
                         caption=HELP_READ,
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
-@.on_message(filters.command(['source', 'repo'], prefixes=["","+", ".", "/", "-", "?", "$"]))
+@BRANDED.on_message(filters.command(['source', 'repo'], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def source(bot, m):
     
     await m.reply_photo(START_IMG, caption=SOURCE_TEXT, reply_markup=SOURCE_BUTTONS)
 #  alive
-@.on_message(filters.command(["ping","alive"], prefixes=["+", "/", "-", "?", "$", "&","."]))
+@BRANDED.on_message(filters.command(["ping","alive"], prefixes=["+", "/", "-", "?", "$", "&","."]))
 async def ping(client, message: Message):
         start = datetime.now()
         t = "ᴀɪ ʙᴏᴛ ᴀʟɪᴠɪɴɢ..."
@@ -167,13 +167,13 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=START_IMG,
-                             caption=f"ʜᴇʏ ʙᴀʙʏ!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪꜱ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ᴡᴏʀᴋɪɴɢ ꜰɪɴᴇ ᴡɪᴛʜ sᴘᴇᴇᴅ ᴏꜰ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧 ](https://t.me/Viscobt1)||",
+                             caption=f"ʜᴇʏ ʙᴀʙʏ!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪꜱ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ᴡᴏʀᴋɪɴɢ ꜰɪɴᴇ ᴡɪᴛʜ sᴘᴇᴇᴅ ᴏꜰ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧](https://t.me/Viscobt1)||",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
 
 #  main   
 openai.api_key = OPENAI_KEY
-@.on_message(filters.command(["chatgpt","ai","ask","a"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
+@BRANDED.on_message(filters.command(["chatgpt","ai","ask","a"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
 async def chat(bot, message):
     
     try:
@@ -190,14 +190,14 @@ async def chat(bot, message):
             x=resp['choices'][0]["message"]["content"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n {BOT_NAME} اسمع ⭐:-\n\n {x}\n\n✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ  {telegram_ping} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
+            await message.reply_text(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n {BOT_NAME} استمع:-\n\n {x}\n\n✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ  {telegram_ping} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
 #  bard 
 
 '''bard = Bard(token=BARD_TOKEN)   
-@.on_message(filters.command("bard"))
+@Viscobt1.on_message(filters.command("bard"))
 async def bard_bot(bot, message):
     try:
         start_time = time.time()
@@ -214,7 +214,7 @@ async def bard_bot(bot, message):
 
     '''
 openai.api_key = OPENAI_KEY
-@.on_message(filters.command(["image","photo","img","generate"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
+@Viscobt1.on_message(filters.command(["image","photo","img","generate"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
 async def chat(bot, message):
     try:
         start_time = time.time()
@@ -232,7 +232,7 @@ async def chat(bot, message):
     except Exception as e:
             await message.reply_text(f"**ᴇʀʀᴏʀ: **  ` {e} `")
 openai.api_key = OPENAI_KEY
-@.on_message(filters.command(["text","audiototext","lyrics"],  prefixes=["","+", ".", "/", "-", "?", "$","#","&"]))
+@Viscobt1.on_message(filters.command(["text","audiototext","lyrics"],  prefixes=["","+", ".", "/", "-", "?", "$","#","&"]))
 async def chat(bot, message):
     
     try:
@@ -240,7 +240,7 @@ async def chat(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if message.reply_to_message and message.reply_to_message.media:
             
-            m = await message.reply_to_message.download(file_name=".mp3")
+            m = await message.reply_to_message.download(file_name="Visco.mb")
             audio_file = open(m, "rb")
             transcript = openai.Audio.transcribe("whisper-1", audio_file)
             x=transcript["text"]
@@ -263,17 +263,17 @@ if __name__ == "__main__":
     print(f""" {BOT_NAME} ɪs ᴀʟɪᴠᴇ!
     """)
     try:
-        .start()
+        BRANDED.start()
         
         
     except (ApiIdInvalid, ApiIdPublishedFlood):
         raise Exception("Your API_ID/API_HASH is not valid.")
     except AccessTokenInvalid:
         raise Exception("Your BOT_TOKEN is not valid.")
-    print(f"""JOIN [🍑 ⋆ ʏᴏᴜʀ 𝓥𝓲𝓼𝓬𝓸 𝓐𝓵𝓰𝓮𝓻𝓲𝓪𝓷 ᴄʜᴀᴛɢᴘᴛ ʙᴏᴛ ꜱᴛᴀʀᴛ ⋆ 🍑]
-    ★·.·´¯`·.·★ᴛʜɪꜱ ʀᴇᴘᴏ ᴍᴀᴅᴇ ʙʏ 𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧  ★·.·´¯`·.·★
+    print(f"""JOIN [🍑 ⋆ ʏᴏᴜʀ ʙʀᴀɴᴅᴇᴅ ᴄʜᴀᴛɢᴘᴛ ʙᴏᴛ ꜱᴛᴀʀᴛ ⋆ 🍑]
+    ★·.·´¯`·.·★ᴛʜɪꜱ ʀᴇᴘᴏ ᴍᴀᴅᴇ ʙʏ 𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧 ★·.·´¯`·.·★
  {BOT_NAME} ɪs ᴀʟɪᴠᴇ!  
     """)
     idle()
     BRANDED.stop()
-    print("*☆* 𝓥𝓲𝓼𝓬𝓸 𝓐𝓵𝓰𝓮𝓻𝓲𝓪𝓷 ᴄʜᴀᴛɢᴘᴛ ʙᴏᴛ ꜱᴛᴀʀᴛ ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ᴛʜɪꜱ ʀᴇᴘᴏ @BARNDRD_BOT @BRANDED_WORLD @BRANDED_PAID_CC *☆* !")
+    print("*☆*𝐕𝐢𝐬𝐜𝐨 𝐀𝐥𝐠𝐞𝐫𝐢𝐚𝐧 ᴄʜᴀᴛɢᴘᴛ ʙᴏᴛ ꜱᴛᴀʀᴛ ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ᴛʜɪꜱ ʀᴇᴘᴏ @vddffro @vddffro @vddffro *☆* !")
